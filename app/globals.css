@@ -841,6 +841,24 @@ footer.final-starfield { background-color:rgba(3,4,8,.7); }
 .chart-panel { min-width:0; height:430px; padding:20px 18px 10px; border:1px solid rgba(173,137,233,.25); border-radius:10px; background:linear-gradient(180deg,rgba(17,19,34,.94),rgba(7,9,18,.9)); box-shadow:0 18px 56px rgba(0,0,0,.27),inset 0 1px rgba(255,255,255,.025); }
 .chart-panel h3 { margin:0 0 2px; color:#eeeaf2; font:600 14px "Playfair Display",Georgia,serif; }
 .story-plot { width:100%; height:370px; }
+.gaia-variable-guide { padding:76px 0 12px; }
+.gaia-variable-guide>header { display:flex; align-items:flex-end; justify-content:space-between; gap:28px; margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid rgba(194,165,243,.18); }
+.gaia-variable-guide>header .eyebrow { margin:0; }
+.gaia-variable-guide>header h2 { margin:0; color:#eeeaf2; font:600 clamp(28px,3vw,43px)/1.08 "Playfair Display",Georgia,serif; letter-spacing:0; }
+.gaia-variable-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:0; }
+.gaia-variable-card { min-width:0; padding:20px; border:1px solid rgba(190,143,231,.22); border-radius:8px; background:linear-gradient(145deg,rgba(22,19,38,.78),rgba(9,11,21,.88)); box-shadow:inset 0 1px rgba(255,255,255,.025); }
+.gaia-variable-card dt { color:#efb4d7; font:600 13px/1.2 var(--font-geist-mono); }
+.gaia-variable-card dd { margin:11px 0 0; color:#b9b4c3; font-size:11px; line-height:1.6; }
+.stellar-color-note { display:grid; grid-template-columns:minmax(170px,.3fr) minmax(0,1fr); gap:28px; margin-top:16px; padding:22px 24px; border:1px solid rgba(231,189,212,.2); border-left-color:rgba(243,138,201,.7); border-radius:8px; background:rgba(12,12,25,.72); }
+.stellar-color-note h3 { margin:0; color:#eeeaf2; font:600 16px/1.3 "Playfair Display",Georgia,serif; }
+.stellar-color-note p { max-width:1000px; margin:0; color:#b9b4c3; font-size:12px; line-height:1.65; }
+.astronomy-context { margin-top:44px; }
+.astronomy-context>h3 { margin:0 0 16px; color:#eeeaf2; font:600 20px/1.2 "Playfair Display",Georgia,serif; }
+.astronomy-context-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-block:1px solid rgba(194,165,243,.18); }
+.astronomy-context-grid article { min-width:0; padding:20px 24px; border-right:1px solid rgba(194,165,243,.18); }
+.astronomy-context-grid article:last-child { border-right:0; }
+.astronomy-context-grid h4 { margin:0; color:#efb4d7; font:600 13px/1.2 var(--font-geist-mono); }
+.astronomy-context-grid p { margin:10px 0 0; color:#aaa6b4; font-size:11px; line-height:1.65; }
 .key-findings { padding:86px 0 94px; }
 .findings-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
 .findings-grid article { position:relative; min-height:220px; padding:24px; overflow:hidden; border:1px solid rgba(231,189,212,.28); border-radius:10px; background:linear-gradient(145deg,rgba(32,20,42,.7),rgba(12,13,27,.94)); box-shadow:inset 0 1px rgba(255,255,255,.025),0 16px 45px rgba(0,0,0,.22); }
@@ -868,6 +886,7 @@ footer.final-starfield { background-color:rgba(3,4,8,.7); }
   .metric:nth-child(-n+2) { border-bottom:1px solid rgba(194,165,243,.14); }
   .secondary-visuals,.key-findings { width:calc(100% - 32px); }
   .secondary-grid { grid-template-columns:1fr; }
+  .gaia-variable-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .findings-grid { grid-template-columns:1fr 1fr; }
   .landing-footer { grid-template-columns:1fr 1fr; }
   .footer-statement { justify-self:start; }
@@ -884,6 +903,14 @@ footer.final-starfield { background-color:rgba(3,4,8,.7); }
   .story-heading>p { margin-top:13px; }
   .chart-panel { height:390px; padding-inline:8px; }
   .story-plot { height:338px; }
+  .gaia-variable-guide { padding-top:58px; }
+  .gaia-variable-guide>header { display:block; }
+  .gaia-variable-guide>header h2 { margin-top:10px; }
+  .gaia-variable-grid { grid-template-columns:1fr; }
+  .stellar-color-note { grid-template-columns:1fr; gap:10px; padding:20px; }
+  .astronomy-context-grid { grid-template-columns:1fr; }
+  .astronomy-context-grid article { border-right:0; border-bottom:1px solid rgba(194,165,243,.18); }
+  .astronomy-context-grid article:last-child { border-bottom:0; }
   .findings-grid { grid-template-columns:1fr; }
   .findings-grid article { min-height:180px; }
   .landing-footer { grid-template-columns:1fr; text-align:left; }

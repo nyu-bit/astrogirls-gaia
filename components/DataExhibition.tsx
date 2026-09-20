@@ -68,6 +68,17 @@ const findings = [
   },
 ];
 
+const gaiaVariables = [
+  ["RA_ICRS", "Ascensión recta. Una de las coordenadas que permite ubicar una fuente en el cielo."],
+  ["DE_ICRS", "Declinación. Completa la posición de la fuente en el sistema celeste."],
+  ["Plx", "Paralaje, medida en milisegundos de arco (mas). Se utiliza para estimar distancia."],
+  ["e_Plx", "Incertidumbre asociada a la medición de paralaje."],
+  ["Gmag", "Magnitud observada en la banda G de Gaia. Valores menores indican mayor brillo aparente."],
+  ["BP-RP", "Índice de color calculado a partir de las bandas BP y RP. Valores menores corresponden a fuentes relativamente más azuladas y valores mayores a fuentes más rojizas."],
+  ["RV", "Velocidad radial, expresada en km/s. Indica el movimiento de la fuente a lo largo de la línea de visión."],
+  ["distancia_pc", "Distancia aproximada expresada en parsecs."],
+] as const;
+
 export function DataExhibition() {
   const gaia = useGaiaData();
 
@@ -114,6 +125,45 @@ function Exhibition({ stars }: { stars: StarPoint[] }) {
             <GalacticMap stars={stars} />
           </article>
         </div>
+
+        <section className="gaia-variable-guide" aria-labelledby="gaia-variable-guide-title">
+          <header>
+            <p className="eyebrow">GUÍA DEL DATASET</p>
+            <h2 id="gaia-variable-guide-title">Cómo leer las variables de Gaia</h2>
+          </header>
+
+          <dl className="gaia-variable-grid">
+            {gaiaVariables.map(([name, description]) => (
+              <div className="gaia-variable-card" key={name}>
+                <dt>{name}</dt>
+                <dd>{description}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <aside className="stellar-color-note" aria-labelledby="stellar-color-note-title">
+            <h3 id="stellar-color-note-title">Color y tipo estelar</h3>
+            <p>En astronomía, las estrellas suelen clasificarse en tipos espectrales O, B, A, F, G, K y M, relacionados con su temperatura y color. En este proyecto no asignamos tipos espectrales exactos a partir de BP-RP. Nuestra clasificación “más azulada / intermedia / más rojiza” es relativa a la distribución de nuestra propia muestra.</p>
+          </aside>
+
+          <section className="astronomy-context" aria-labelledby="astronomy-context-title">
+            <h3 id="astronomy-context-title">Contexto astronómico</h3>
+            <div className="astronomy-context-grid">
+              <article>
+                <h4>Gaia</h4>
+                <p>Misión de la ESA que mide posiciones, movimientos, distancias y propiedades fotométricas de estrellas.</p>
+              </article>
+              <article>
+                <h4>Parsec</h4>
+                <p>Unidad de distancia astronómica.<br />1 pc ≈ 3,26 años luz.</p>
+              </article>
+              <article>
+                <h4>BP-RP</h4>
+                <p>Índice de color de Gaia.<br />Valores menores → relativamente más azuladas.<br />Valores mayores → relativamente más rojizas.</p>
+              </article>
+            </div>
+          </section>
+        </section>
       </section>
 
       <section id="hallazgos" className="key-findings">

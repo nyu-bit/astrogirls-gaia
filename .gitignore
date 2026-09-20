@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# Local development fonts (personal-use licenses; never redistribute)
+/public/fonts/local/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

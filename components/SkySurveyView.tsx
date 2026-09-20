@@ -2,24 +2,14 @@
 
 import { useState } from "react";
 
-const SURVEY_ID = "CDS/P/DSS2/color";
 const SURVEY_LABEL = "DSS2 color · CDS HiPS2FITS";
-const ENDPOINT = "https://alasky.cds.unistra.fr/hips-image-services/hips2fits";
 
 export function SkySurveyView({ ra, dec }: { ra: number; dec: number }) {
   const params = new URLSearchParams({
-    hips: SURVEY_ID,
-    width: "360",
-    height: "216",
-    projection: "TAN",
-    fov: "0.08",
-    coordsys: "icrs",
     ra: String(ra),
     dec: String(dec),
-    format: "jpg",
-    stretch: "asinh",
   });
-  const imageUrl = `${ENDPOINT}?${params.toString()}`;
+  const imageUrl = `/api/dss2?${params.toString()}`;
 
   return (
     <figure className="sky-survey">

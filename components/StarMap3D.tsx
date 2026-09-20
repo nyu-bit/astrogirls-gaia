@@ -27,7 +27,7 @@ export default function StarMap3D({ stars, showClusterMatches, onSelect }: Props
   }
   traces.push({ type: "scatter3d", mode: "markers+text", name: "Sol — origen", x: [0], y: [0], z: [0], text: ["Sol"], textposition: "middle right", hovertemplate: "Sol — origen del sistema de coordenadas<extra></extra>", marker: { color: "#FFF8E7", size: 9, line: { color: "#FFC66D", width: 4 } } });
 
-  const layout: Partial<Layout> = { autosize: true, paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", margin: { l: 2, r: 2, t: 2, b: 2 }, font: { family: "var(--font-geist-sans)", color: "#B9B8C5", size: 11 }, legend: { orientation: "h", x: 0, y: 1, bgcolor: "rgba(0,0,0,0)", font: { size: 10 } }, scene: { bgcolor: "rgba(0,0,0,0)", domain: { x: [0, 1], y: [0, 1] }, aspectmode: "data", camera, dragmode: "orbit", xaxis: axis("X (pc)"), yaxis: axis("Y (pc)"), zaxis: axis("Z (pc)") }, uirevision: `astrogirls-map-${cameraRevision}`, showlegend: true };
+  const layout: Partial<Layout> = { autosize: true, paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", margin: { l: 2, r: 2, t: 2, b: 2 }, font: { family: "var(--font-geist-sans)", color: "#B9B8C5", size: 11 }, legend: { orientation: "h", x: 0, y: 1, bgcolor: "rgba(0,0,0,0)", font: { size: 10 } }, scene: { bgcolor: "rgba(0,0,0,0)", domain: { x: [0, 1], y: [0, 1] }, aspectmode: "cube", camera, dragmode: "orbit", xaxis: axis("X (pc)"), yaxis: axis("Y (pc)"), zaxis: axis("Z (pc)") }, uirevision: "star-map-3d", showlegend: true };
   const config: Partial<Config> = { responsive: true, displaylogo: false, scrollZoom: false, modeBarButtonsToRemove: ["toImage", "sendChartToCloud", "resetCameraLastSave3d"] };
 
   function handleClick(event: PlotMouseEvent) {
@@ -60,7 +60,6 @@ export default function StarMap3D({ stars, showClusterMatches, onSelect }: Props
   function handleRelayout(event: Record<string, unknown>) {
     const updatedCamera = event["scene.camera"] as typeof initialCamera | undefined;
     if (updatedCamera?.eye) cameraRef.current = updatedCamera;
-    setInteracted(true);
   }
 
   return <>
@@ -89,5 +88,5 @@ function hoverText(star: StarPoint) {
 }
 
 function axis(title: string) {
-  return { title: { text: title, font: { color: "#EEEAF2", size: 12 } }, backgroundcolor: "rgba(10,9,20,.28)", gridcolor: "rgba(190,160,238,.22)", zerolinecolor: "rgba(245,241,242,.58)", color: "#9995A7", showbackground: true, showspikes: false };
+  return { title: { text: title, font: { color: "#EEEAF2", size: 12 } }, range: [-205, 205] as [number, number], autorange: false, backgroundcolor: "rgba(10,9,20,.28)", gridcolor: "rgba(190,160,238,.22)", zerolinecolor: "rgba(245,241,242,.58)", color: "#9995A7", showbackground: true, showspikes: false };
 }

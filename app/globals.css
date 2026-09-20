@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-@font-face { font-family:"ChopinScript"; src:url("/fonts/chopinscript/Chopinscript-jWKj.otf") format("opentype"); font-style:normal; font-weight:400; font-display:swap; }
-@font-face { font-family:"Some Weatz Local"; src:url("/fonts/local/SomeWeatz_with_swashes.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
-@font-face { font-family:"Respective Local"; src:url("/fonts/local/Respective_2.0.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
-@font-face { font-family:"Respective Swashes Local"; src:url("/fonts/local/Respective_2.0_Swashes.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
-@font-face { font-family:"Great Vibes Local"; src:url("/fonts/great-vibes/GreatVibes-Regular.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
-
 :root { --ink:#05060b; --panel:#0d0f1a; --paper:#f5f1f2; --muted:#aaa9b6; --pink:#e7bdd4; --lilac:#a77af4; --blue:#419dff; --red:#ff536d; --warm:#ffc66d; --line:rgba(231,189,212,.16); --font-geist-sans:Arial,Helvetica,sans-serif; --font-geist-mono:"Courier New",monospace; --font-display:"Respective Local","Ballet",cursive; --font-wordmark:"Respective Swashes Local","Respective Local","Ballet",cursive; --font-coquette:"Respective Local","Ballet",cursive; --font-clean:"Plus Jakarta Sans",sans-serif; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; background:var(--ink); }
@@ -721,9 +715,9 @@ footer.final-starfield { background-color:rgba(3,4,8,.7); }
 
 /* Hero typography */
 .hero { font-family:var(--font-clean); }
-.hero-wordmark { font-family:"Great Vibes Local",cursive; font-size:clamp(5.6rem,7.2vw,8.4rem); font-style:normal; font-weight:400; line-height:.82; letter-spacing:0; text-shadow:0 2px 18px rgba(0,0,0,.78),0 0 22px rgba(231,189,212,.26); }
+.hero-wordmark { font-family:var(--font-great-vibes),cursive; font-size:clamp(5.6rem,7.2vw,8.4rem); font-style:normal; font-weight:400; line-height:.82; letter-spacing:0; text-shadow:0 2px 18px rgba(0,0,0,.78),0 0 22px rgba(231,189,212,.26); }
 .hero h1 { font-family:"Playfair Display",Georgia,serif; font-size:clamp(3.25rem,5.2vw,5.35rem); font-weight:600; line-height:.96; letter-spacing:0; }
-.hero h1 em { margin-top:.12em; font-family:"Great Vibes Local",cursive; font-size:clamp(4.5rem,5.7vw,6.5rem); font-style:normal; font-weight:400; line-height:.82; letter-spacing:0; }
+.hero h1 em { margin-top:.12em; font-family:var(--font-great-vibes),cursive; font-size:clamp(4.5rem,5.7vw,6.5rem); font-style:normal; font-weight:400; line-height:.82; letter-spacing:0; }
 
 /* Editorial headings use the expressive family; instrument UI stays clean. */
 .section-heading h2,
@@ -779,7 +773,7 @@ footer.final-starfield { background-color:rgba(3,4,8,.7); }
 .exhibition-footer { min-height:300px; padding:70px clamp(24px,7vw,120px); display:flex; flex-direction:column; justify-content:center; align-items:center; gap:34px; text-align:center; }
 .exhibition-footer>p { max-width:760px; margin:0; color:var(--paper); font:600 clamp(28px,4vw,52px)/1.15 "Playfair Display",Georgia,serif; text-transform:none; letter-spacing:0; }
 .exhibition-footer .footer-brand { display:flex; flex-direction:column; gap:5px; align-items:center; }
-.exhibition-footer .footer-brand .brand-name { font-family:"Great Vibes Local",cursive; font-size:40px; font-style:normal; }
+.exhibition-footer .footer-brand .brand-name { font-family:var(--font-great-vibes),cursive; font-size:40px; font-style:normal; }
 .exhibition-footer .footer-brand small { letter-spacing:.18em; }
 
 @media (max-width:820px) {
@@ -825,7 +819,7 @@ footer.final-starfield { background-color:rgba(3,4,8,.7); }
 .hero-side-note { position:absolute; z-index:3; bottom:104px; margin:0; color:rgba(231,189,212,.72); font:8px/1.7 var(--font-geist-mono); text-transform:uppercase; letter-spacing:.16em; }
 .hero-side-note::after { content:""; display:block; width:44px; height:1px; margin-top:12px; background:var(--pink); }
 .hero-side-note-left { left:clamp(28px,5vw,90px); text-align:left; }
-.hero-side-note-right { right:clamp(28px,5vw,90px); text-align:right; font-family:"Great Vibes Local",cursive; font-size:18px; line-height:1.15; text-transform:none; letter-spacing:0; }
+.hero-side-note-right { right:clamp(28px,5vw,90px); text-align:right; font-family:var(--font-great-vibes),cursive; font-size:18px; line-height:1.15; text-transform:none; letter-spacing:0; }
 .hero-side-note-right::after { margin-left:auto; }
 
 .metrics { position:relative; z-index:8; width:min(1680px,calc(100vw - 64px)); margin:-78px auto 0; padding:14px 20px; gap:0; border:1px solid rgba(173,137,233,.25); border-radius:14px; background:rgba(8,10,20,.91); box-shadow:0 22px 70px rgba(0,0,0,.42),0 0 30px rgba(117,73,190,.08); backdrop-filter:blur(18px); }
@@ -859,7 +853,7 @@ footer.final-starfield { background-color:rgba(3,4,8,.7); }
 
 .landing-footer { min-height:250px; padding:52px max(32px,calc((100vw - 1680px)/2)); display:grid; grid-template-columns:1fr 1.3fr auto 1fr; align-items:center; gap:28px 46px; border-top:1px solid var(--line); }
 .landing-footer .footer-brand { display:flex; flex-direction:column; align-items:flex-start; }
-.landing-footer .brand-name { font-family:"Great Vibes Local",cursive; font-size:48px; font-style:normal; }
+.landing-footer .brand-name { font-family:var(--font-great-vibes),cursive; font-size:48px; font-style:normal; }
 .landing-footer .footer-brand small,.landing-footer nav a,.footer-legal,.footer-statement { color:#888592; font:8px var(--font-geist-mono); text-transform:uppercase; letter-spacing:.13em; }
 .footer-copy p { max-width:360px; margin:0; color:#b8b5c0; font-size:11px; line-height:1.6; }
 .footer-copy small { display:block; margin-top:10px; color:#777480; font-size:9px; }

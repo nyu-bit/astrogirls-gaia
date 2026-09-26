@@ -88,5 +88,15 @@ function hoverText(star: StarPoint) {
 }
 
 function axis(title: string) {
-  return { title: { text: title, font: { color: "#EEEAF2", size: 12 } }, range: [-205, 205] as [number, number], autorange: false, backgroundcolor: "rgba(10,9,20,.28)", gridcolor: "rgba(190,160,238,.22)", zerolinecolor: "rgba(245,241,242,.58)", color: "#9995A7", showbackground: true, showspikes: false };
+  return {
+    title: { text: title, font: { color: "rgba(238,234,242,.72)", size: 11 } },
+    range: [-205, 205] as [number, number],
+    autorange: false,
+    backgroundcolor: "rgba(10,9,20,.08)",
+    gridcolor: "rgba(190,160,238,.10)",
+    zerolinecolor: "rgba(245,241,242,.34)",
+    color: "rgba(153,149,167,.62)",
+    showbackground: true,
+    showspikes: false,
+  };
 }
